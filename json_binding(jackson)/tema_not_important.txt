@@ -1,0 +1,10 @@
+use plugin in maven jaxbmavin plugin that generates classes from shema
+
+
+save an xml file to db using jaxb + validarea 
+
+
+validarea unui xml cu ajutorul schemei
+
+
+temporal adjuster  
