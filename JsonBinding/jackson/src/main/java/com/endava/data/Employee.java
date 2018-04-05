@@ -7,6 +7,10 @@ public class Employee {
     private String position;
     private double salary;
 
+
+    public Employee() {
+    }
+
     public Employee(long id, String firstName, String lastName, String position, double salary) {
         this.id = id;
         this.firstName = firstName;

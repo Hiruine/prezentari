@@ -1,12 +1,16 @@
 package com.endava.defaultMapping;
 
 import com.endava.data.Employee;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
+import java.math.BigDecimal;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonToObject {
     public static void main(String[] args) {
@@ -14,20 +18,18 @@ public class JsonToObject {
         ObjectMapper mapper = new ObjectMapper();
 
 
-        String jsonInString ="{\"id\":21435124, \"firstName\":\"hello\"," +
-                " \"lastName\":\"world\"," +
-                " \"position\":\"developer\" ,\"salary\":42}";
+        String jsonInString ="{\"id\":1232145124, \"firstName\":\"blah\"," +
+                " \"lastName\":\"the second\"," +
+                " \"position\":\"guru\" ,\"salary\":42}";
 
-        System.out.println(jsonInString);
 
         try {
             //JSON from file to Object
             Employee employee = mapper.readValue(
-                    new File("/home/hiruine/programing/endava_internship2018/" +
-                            "json_binding/prezentari/JsonBinding/jackson/src/resources/testFile.json"),
+                    Paths.get("C:\\internship\\prezentari\\JsonBinding\\jackson\\" +
+                            "src\\resources\\testFile.json").toFile(),
                     Employee.class);
             System.out.println(employee.toString());
-
 
             //JSON from String to Object
             System.out.println(mapper.readValue(jsonInString, Employee.class).toString());

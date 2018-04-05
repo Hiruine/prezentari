@@ -10,6 +10,9 @@ public class Car {
         this.type = type;
     }
 
+    public Car() {
+    }
+
     public String getColor() {
         return color;
     }
@@ -24,5 +27,13 @@ public class Car {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "color='" + color + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
