@@ -1,4 +1,4 @@
-package com.endava;
+package com.endava.serialization;
 
 public class JsonDeserializer {
 }
