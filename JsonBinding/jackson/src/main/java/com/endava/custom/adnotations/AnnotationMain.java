@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class AdnotationMain {
+public class AnnotationMain {
     public static void main(String[] args) throws Exception{
 
         Person person = new Person();
@@ -16,6 +16,8 @@ public class AdnotationMain {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(filePath.toFile(), person);
+
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(person));
 
     }
 }

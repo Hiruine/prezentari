@@ -11,7 +11,6 @@ public class CustomCarSerializationMain {
         try {
             // register serializers and deserializes via Module interface.
             // This is the recommended way to add custom serializers
-
             ObjectMapper mapper = new ObjectMapper();
             SimpleModule module =
                     new SimpleModule("CustomCarSerializer", new Version(1, 0, 0, null, null, null));

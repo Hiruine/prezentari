@@ -27,19 +27,17 @@ public class SerializerMain {
 
             jsonb.toJson(animal, os);
 
-
-
         } catch (IOException ex) {
             System.out.println("haa");
         }
 
-        try (BufferedReader is = Files.newBufferedReader(path)) {
-            Animal deserializedAnimal = jsonb.fromJson(is, Animal.class);
-            System.out.println(deserializedAnimal.toString());
-
-        } catch (IOException ex) {
-            System.out.println("haa");
-        }
+//        try (BufferedReader is = Files.newBufferedReader(path)) {
+//            Animal deserializedAnimal = jsonb.fromJson(is, Animal.class);
+//            System.out.println(deserializedAnimal.toString());
+//
+//        } catch (IOException ex) {
+//            System.out.println("haa");
+//        }
 
 
 

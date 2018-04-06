@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 public class ObjectToJson {
     public static void main(String[] args) {
 
-        Employee employee = new Employee(21435124, "hello", "world",
+        Employee employee = Employee.createEmployee(21435124, "hello", "world",
                 "developer", 42);
         Path filePath = Paths.get("jackson/src/resources/testFile.json");
         ObjectToJson.serialize(employee, filePath);

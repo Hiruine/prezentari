@@ -9,11 +9,11 @@ import java.io.IOException;
 
 public class CustomCarSerializer extends StdSerializer<Car> {
 
-    public CustomCarSerializer() {
+    CustomCarSerializer() {
         this(null);
     }
 
-    public CustomCarSerializer(Class<Car> t) {
+    CustomCarSerializer(Class<Car> t) {
         super(t);
     }
 
@@ -25,6 +25,7 @@ public class CustomCarSerializer extends StdSerializer<Car> {
         //instructions for how to render JSON
         jsonGenerator.writeStartObject();
         jsonGenerator.writeStringField("car_brand", car.getType());
+        jsonGenerator.writeStringField("car_color", car.getColor());
         jsonGenerator.writeEndObject();
 
 

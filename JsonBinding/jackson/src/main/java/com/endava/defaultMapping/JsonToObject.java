@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonToObject {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -23,20 +23,18 @@ public class JsonToObject {
                 " \"position\":\"guru\" ,\"salary\":42}";
 
 
-        try {
+
             //JSON from file to Object
-            Employee employee = mapper.readValue(
-                    Paths.get("C:\\internship\\prezentari\\JsonBinding\\jackson\\" +
-                            "src\\resources\\testFile.json").toFile(),
-                    Employee.class);
-            System.out.println(employee.toString());
+//            Employee employee = mapper.readValue(
+//                    Paths.get("C:\\internship\\prezentari\\JsonBinding\\jackson\\" +
+//                            "src\\resources\\testFile.json").toFile(),
+//                    Employee.class);
+//            System.out.println(employee.toString());
 
             //JSON from String to Object
             System.out.println(mapper.readValue(jsonInString, Employee.class).toString());
 
 
-        } catch (IOException e) {
-            System.out.println();
-        }
+
     }
 }

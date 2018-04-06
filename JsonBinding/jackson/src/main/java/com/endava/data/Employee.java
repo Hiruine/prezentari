@@ -1,62 +1,54 @@
 package com.endava.data;
 
-public class Employee {
-    private long id;
-    private String firstName;
-    private String lastName;
-    private String position;
-    private double salary;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public final class Employee {
+    private final long id;
+    private final String firstName;
+    private final String lastName;
+    private final String position;
+    private final double salary;
 
-    public Employee() {
-    }
-
-    public Employee(long id, String firstName, String lastName, String position, double salary) {
+    private Employee( long id,
+                      String firstName,
+                      String lastName,
+                      String position,
+                      double salary) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.position = position;
         this.salary = salary;
+    }
+
+    @JsonCreator
+    public static Employee createEmployee(@JsonProperty("id") long id,
+                                          @JsonProperty("firstName") String firstName,
+                                          @JsonProperty("lastName") String lastName,
+                                          @JsonProperty("position") String position,
+                                          @JsonProperty("salary") double salary) {
+        return new Employee(id, firstName, lastName, position, salary);
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
     public double getSalary() {
         return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
     }
 
     @Override
